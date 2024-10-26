@@ -1,0 +1,75 @@
+﻿<Window x:Class="FolderProtectionToolMaster.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FolderProtectionToolMaster"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        Title="文件加密工具"
+        Height="240"
+        Width="650"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <TextBlock x:Name="Info_Txt"
+                       VerticalAlignment="Bottom"
+                       HorizontalAlignment="Center"
+                       FontSize="32" />
+        </Grid>
+        <GroupBox  Grid.RowSpan="2"
+                   Width="90"
+                   Header="文件夹状态"
+                   Height="90"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Left">
+            <StackPanel VerticalAlignment="Center">
+                <Image x:Name="Picture"
+                       Width="80"
+                       Height="80"
+                       Source="pack://application:,,,/Images/folder.png" />
+            </StackPanel>
+        </GroupBox>
+        
+        <StackPanel Grid.Row="1"
+                    Margin="10,10">
+            <StackPanel Orientation="Horizontal"
+                        Margin="80,3,0,20">
+                <TextBlock Text="已加密文件个数："
+                           
+                           FontWeight="Bold" />
+                <TextBlock x:Name="FolderNum"
+                           FontWeight="Bold" 
+                           Text="0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="文件路径："
+                           VerticalAlignment="Center"
+                           Margin="80,0,0,0" />
+                <TextBox x:Name="File_Txt"
+                         Width="380"
+                         Height="30"
+                         Margin="10,0"
+                         VerticalContentAlignment="Center"
+                         HorizontalAlignment="Left" />
+                <Button x:Name="File_Btn"
+                        Width="70"
+                        Background="white"
+                        Content="选择文件夹"
+                        Click="File_Btn_Click" />
+            </StackPanel>
+            <CheckBox x:Name="Encrypted_CB"
+                      Content="加密文件是否设置密码"
+                      IsChecked="True"
+                      VerticalContentAlignment="Center"
+                      HorizontalAlignment="Center" />
+        </StackPanel>
+
+    </Grid>
+</Window>
